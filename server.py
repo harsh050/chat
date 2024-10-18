@@ -60,7 +60,9 @@ async def remove_client(writer):
 
 # Main function to start the server
 async def main():
-    server = await asyncio.start_server(handle_client, '127.0.0.1', 12345)
+    server_ip = "127.0.0.1"
+    server_port = "12345"
+    server = await asyncio.start_server(handle_client, server_ip, server_port)
     addr = server.sockets[0].getsockname()
     print(f'Server started on {addr}')
 
